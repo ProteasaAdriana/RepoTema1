@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+	<head>
+
+	<title>Studenti</title>
+
+<style>
+	.tabela1{
+		border: 3px solid #0066FF;
+		width: 450px;
+		height: 150px;
+		padding: 10px;
+		
+	}	
+
+	
+	.tabela1 thead tr {
+		background-color: #339999;
+		font-weight: bold;
+		font-style: italic bold;
+		text-align: center;
+
+
+
+
+	}
+	.tabela1 thead tr th{
+		vertical-align: middle;
+		text-align: center;
+
+
+	}
+	.tabela1 tbody tr{
+		border: 10px solid:#339999 ;
+		
+	}
+	.tabela1 tbody tr td{
+		background-color: #CCCCCC;
+		font-weight: 20px;
+		color: #0066FF;
+		text-align: center;	
+	}
+
+	
+</style>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+<script>
+$(function(){
+	$('#form1').submit(function(e){
+		e.preventDefault();
+		var nume=$('#nume').val();
+		var pren=$('#prenume').val();
+		var fac=$('#facultate').val();
+		$('tbody tr:last').after('<tr>'+'<td>'+nume+'</td>'+'<td>'+pren+'</td>'+'<td>'+fac+'</td></tr>');
+
+	})
+
+	$('td').click(function(){
+		$(this).html(' ');
+		
+	})
+	
+})
+
+</script>
+</head>
+
+<body>
+	<table class="tabela1">
+		<thead>
+			<tr>
+			<th>Nume</th>
+			<th>Prenume</th>
+			<th>Facultate</th>
+			</tr>
+		</thead>
+	<tbody>
+		<tr>
+			<td> Protasa</td>
+			<td>Adriana</td>
+			<td>CSIE</td>
+		</tr>
+
+		<tr>
+			<td> Popescu</td>
+			<td>Maria</td>
+			<td>CSIE</td>
+		</tr>
+
+
+<form id="form1">
+	<label for ="nume" >Nume</label>
+	<input name="nume" id="nume" type="text"/><br>
+	<label for="prenume" >Prenume</label>
+	<input name="prenume" id="prenume" type="text"><br>
+	<label for="facultate" >Facultate</label>
+	<input name="facultate" id="facultate" type="text"><br>
+	<input type="submit" id="btn" name="btn" value="adauga">
+
+
+</form>
+
+	</tbody>
+</table>
+
+</body>
+
+</html>
