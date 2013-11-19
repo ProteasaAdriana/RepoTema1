@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html>
+	<head>
+
+	<title>Studenti</title>
+
+<style>
+	
+
+	.tabela1
+{
+	border: 2px solid #339999;
+	border-collapse: collapse;
+	
+	text-align: left;
+	
+	width: 40%;
+	float: left;
+	text-shadow: 0.1em 0.1em 0.1em black;
+	box-shadow: black 0.5em 0.5em 0.3em;
+
+}
+
+	.tabela1 td, th{
+
+	padding: 8px 12px;
+	border-bottom: 1px solid #339999;
+}
+
+	
+	.tabela1 thead tr {
+		background-color: #CCCCFF;
+		font-weight: bold;
+		font-style: italic bold;
+		text-align: center;
+		
+
+
+
+
+	}
+	.tabela1 thead tr th{
+		vertical-align: middle;
+		text-align: center;
+
+
+	}
+	 
+		
+	
+	.tabela1 tbody tr td{
+		background-color: #F1F1FF;
+		font-weight: 20px;
+		color: #787880;
+		text-align: center;	
+		text-shadow: 0.1em 0.1em 0.2em black;
+		color: black;
+	}
+ form{
+ 	display: block;
+ }
+label{
+	 font-style: bold;
+ 	display: block;
+ 	width: 100px;
+ }
+ input{
+
+ 	width: 100px;
+ }
+
+</style>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+<script>
+$(function(){
+	$('#form1').submit(function(e){
+		e.preventDefault();
+		var nume=$('#nume').val();
+		var pren=$('#prenume').val();
+		var fac=$('#facultate').val();
+		$('tbody tr:last').after('<tr>'+'<td>'+nume+'</td>'+'<td>'+pren+'</td>'+'<td>'+fac+'</td></tr>');
+
+	})
+
+	$('td').click(function(){
+		$(this).html(' ');
+		
+	})
+	
+})
+
+</script>
+</head>
+
+<body>
+	<table class="tabela1">
+		<thead>
+			<tr>
+			<th>Nume</th>
+			<th>Prenume</th>
+			<th>Facultate</th>
+			</tr>
+		</thead>
+	<tbody>
+		<tr>
+			<td> Protasa</td>
+			<td>Adriana</td>
+			<td>CSIE</td>
+		</tr>
+
+		<tr>
+			<td> Popescu</td>
+			<td>Maria</td>
+			<td>CSIE</td>
+		</tr>
+
+
+<form id="form1">
+	<label for ="nume" >Nume</label>
+	<input name="nume" id="nume" type="text"/><br>
+	<label for="prenume" >Prenume</label>
+	<input name="prenume" id="prenume" type="text"><br>
+	<label for="facultate" >Facultate</label>
+	<input name="facultate" id="facultate" type="text"><br>
+	<input type="submit" id="btn" name="btn" value="adauga"><br>
+
+
+</form>
+
+	</tbody>
+</table>
+
+</body>
+
+</html>
